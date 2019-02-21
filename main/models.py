@@ -4,18 +4,18 @@ from django.utils import timezone
 # Create your models here.
 
 
-def grab_time():
-    time = timezone.now()
-    return time
+class Content(models.Model):
+    id = models.IntegerField()
+    text = models.CharField()
 
 
-class Comment(models.Model):
-    autor = models.CharField(max_length=50)
-    content = models.CharField(max_length=500)
-    pub_date = models.DateTimeField(default=grab_time())
+class Glist(models.Model):
+    id = models.IntegerField()
 
-    def __str__(self):
-        insight = self.autor + ": " + self.content[:20]
-        if len(self.content) > 20:
-            insight += "..."
-        return insight
+
+class Gelement(models.Model):
+    graphic = models.ImageField()
+    subtitle = models.CharField()
+    id = models.IntegerField()
+    manager = models.ForeignKey(Glist, on_delete=models.CASCADE)
+
