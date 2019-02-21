@@ -23,14 +23,11 @@
                 <div id="comment">
                     <div id="comment-bar">
                         <div id="comment-autor">
-                            {{ comm.autor }}
-                        </div>
-                        <div id="comment-date">
-                            {{ comm.pub_date }}
+                            {{ comm.id }}
                         </div>
                     </div>
                     <div id="comment-content">
-                        {{ comm.content }}
+                        {{ comm.text }}
                     </div>
                 </div>
             {% endfor %}
