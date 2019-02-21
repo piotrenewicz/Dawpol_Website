@@ -5,17 +5,16 @@ from django.utils import timezone
 
 
 class Content(models.Model):
-    id = models.IntegerField()
-    text = models.CharField()
+    id = models.IntegerField(primary_key=True)
+    text = models.CharField(max_length=1000)
 
 
 class Glist(models.Model):
-    id = models.IntegerField()
+    id = models.IntegerField(primary_key=True)
 
 
 class Gelement(models.Model):
     graphic = models.ImageField()
-    subtitle = models.CharField()
-    id = models.IntegerField()
+    subtitle = models.CharField(max_length=100)
     manager = models.ForeignKey(Glist, on_delete=models.CASCADE)
 

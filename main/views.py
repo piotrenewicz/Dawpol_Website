@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from .models import Comment
+from .models import Content
 
 # Create your views here.
 
@@ -14,8 +14,8 @@ def index(request):
 
 
 def com_list(request):
-    comments = Comment.objects.all()
+    contents = Content.objects.all()
     context = {
-        "comments": comments
+        "comments": contents
     }
     return render(request, 'main/happy.html', context)
