@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Dawpol</title>
+    <meta name="description" content="Strona mechanika samochodów" />
+    <meta name="keywords" content="słowa, hashtagi"/>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            Witamy na stronie DawPol
+        </div>
+        <div id="nav">
+            <a href="{% url 'main:comments' %}"> strona 1 </a> <br/>
+            strona 2 <br/>
+            strona 3
+        </div>
+        <div id="content">
+            auto mechanik <br/>
+            naprawiamy samochody
+        </div>
+        <div id="sidebar">
+            <p>AD <br/> notations </p>
+        </div>
+        <div id="footer">
+            FooterBędzin <br/>
+            Dawpol
+        </div>
+    </div>
+</body>
+</html>

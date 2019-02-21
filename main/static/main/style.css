@@ -1,0 +1,77 @@
+#body {
+    background-color: gray;
+    /*font-family: Vemana2000;*/
+    font-size: 20px;
+}
+
+#container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+#nav {
+    float: left;
+    background-color: red;
+    max-height: 300px;
+}
+
+#content {
+    float: left;
+    /*width: 80%;*/
+    background-color: white;
+    width: auto;
+}
+
+#sidebar {
+    float: left;
+    background-color: #003f80;
+    width: 10%;
+}
+
+#footer {
+    clear: both;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#comment{
+    /*background-color: green;*/
+    /*padding: 3px;*/
+    margin: 15px;
+    border-radius: 15px;
+    border: groove red;
+}
+
+#comment-bar{
+    background-color: #67dc00;
+    border-radius: 12px;
+    padding: 5px;
+    display: flow-root;
+}
+
+#comment-autor{
+    float: left;
+}
+
+#comment-date{
+    text-align: right;
+    float: right;
+}
+
+#comment-content{
+    padding: 10px;
+}
+
+#spacer{
+    height: 15px;
+}
+
