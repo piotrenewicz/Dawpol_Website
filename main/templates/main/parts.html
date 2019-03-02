@@ -20,20 +20,18 @@
         {% if Parts %}
             {% for part in Parts %}
 {#                <div id="spacer"></div>#}
-                <div id="comment">
-                    <div id="comment-bar">
-                        <div id="comment-autor">
-                            {{ part.subtitle }}
-                        </div>
-                    </div>
-                    <div id="comment-content">
+                <div id="Panel">
+                    <div id="Panel-Image">
                         <img src="{{ part.graphic.url }}" />
+                    </div>
+                    <div id="Panel-Subtitle">
+                         {{ part.subtitle }}
                     </div>
                 </div>
             {% endfor %}
         {% else %}
             <div id="content">
-                Brak komętarzy
+                This is weird.(?) It looks like we have nothing here.
             </div>
         {% endif %}
     </div>

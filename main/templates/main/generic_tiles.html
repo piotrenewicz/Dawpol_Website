@@ -5,9 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
 
     <meta charset="UTF-8">
-    <title>Dawpol</title>
-    <meta name="description" content="Strona mechanika samochodów" />
-    <meta name="keywords" content="słowa, hashtagi"/>
+    <title>We have the secret</title>
+    <meta name="description" content="The secret rests here" />
+    <meta name="keywords" content="words, hashtags"/>
 
     <style>
         #container{
@@ -19,20 +19,20 @@
     <div id="container">
         {% if graphical_items %}
             {% for distinct_item in graphical_items %}
-                <div id="comment">
-                    <div id="comment-bar">
+                <div id="Panel">
+                    <div id="Panel-Image">
                         <div id="comment-autor">
-                            {{ distinct_item.subtitle }}
+                            <img src="{{ distinct_item.graphic.url }}" alt="{{ distinct_item.subtitle }}"/>
                         </div>
                     </div>
-                    <div id="comment-content">
-                        <img src="{{ distinct_item.graphic.url }}" />
+                    <div id="Panel-Subtitle">
+                        {{ distinct_item.subtitle }}
                     </div>
                 </div>
             {% endfor %}
         {% else %}
             <div id="content">
-                Brak komętarzy
+                Oough?? The juice is gone? whaddyamean The JUiCE is GoNE???
             </div>
         {% endif %}
     </div>
