@@ -27,6 +27,9 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ["10.220.22.142"]
 
+MEDIA_ROOT = "/home/aaa4/Desktop/davpol/website/dawpol/media"
+MEDIA_URL = "/media/"
+
 
 # Application definition
 

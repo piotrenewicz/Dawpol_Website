@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Dawpol</title>
+    <meta name="description" content="Strona mechanika samochodów" />
+    <meta name="keywords" content="słowa, hashtagi"/>
+
+    <style>
+        #container{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        {% if Parts %}
+            {% for part in Parts.gelement_set.all %}
+{#                <div id="spacer"></div>#}
+                <div id="comment">
+                    <div id="comment-bar">
+                        <div id="comment-autor">
+                            {{ part.subtitle }}
+                        </div>
+                    </div>
+                    <div id="comment-content">
+                        <img src="{{ part.graphic.url }}" />
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div id="content">
+                Brak komętarzy
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
