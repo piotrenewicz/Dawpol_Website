@@ -25,7 +25,7 @@ SECRET_KEY = '8q+$s+uj8g8ig!zrbmnr64%xmv1d7#@ea1!&85k((2h-k70n#j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["10.220.22.142"]
+ALLOWED_HOSTS = ["10.220.22.142"]
 
 MEDIA_ROOT = "/home/aaa4/Desktop/davpol/website/dawpol/media"
 MEDIA_URL = "/media/"
