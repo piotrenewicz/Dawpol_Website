@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.template import loader
-from .models import Content, GraphicalItemManager, GraphicalItem
+from .models import TextContent, ImageListing, ImageElement, ImageContent
 
 # Create your views here.
-
-
 def index(request):
+    logo = get_content_image("logo_1")
     context = {
-
+        "logo": logo
     }
     # template = loader.render_to_string('main/index.html', context)
     # print(template)
@@ -21,10 +20,13 @@ def parts_gallery(request):
     }
     return render(request, 'main/parts.html', context)
 
+def get_content_image(image_name):
+    image = ImageContent.objects.get(name=image_name)
+    return image
 
 def get_items(item_manager_name):
-    items_manager = GraphicalItemManager.objects.get(id=item_manager_name)
-    all_items = items_manager.graphicalitem_set.all()
+    items_manager = ImageListing.objects.get(id=item_manager_name)
+    all_items = items_manager.imageelement_set.all()
     return all_items
 
 
@@ -37,7 +39,7 @@ def items_view(request, item_manager_name):
 
 
 def com_list(request):
-    contents = Content.objects.all()
+    contents = TextContent.objects.all()
     context = {
         "comments": contents
     }

@@ -12,7 +12,12 @@
 <body>
     <div id="container">
         <div id="header">
-            Witamy na stronie DawPol
+            <div id="logo">
+                <img src="{{ logo.graphic.url }}"/>
+            </div>
+            <div id="top-bar">
+                Witamy na stronie DawPol zmiana
+            </div>
         </div>
         <div id="nav">
             <a href="{% url 'main:parts' %}"> Katalog AutoCzęści </a> <br/>
@@ -21,7 +26,10 @@
         </div>
         <div id="content">
             auto mechanik <br/>
-            naprawiamy samochody
+            naprawiamy samochody <br/>
+            Hohliki pracują <br/>
+            <br/>
+            Marta mówi ja zaprogramowywuje
         </div>
         <div id="sidebar">
             <p>AD <br/> notations </p>
