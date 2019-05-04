@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  </body>
+</html>
+
+
+    {% load static %}
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Dawpol</title>
     <meta name="description" content="Strona mechanika samochodów" />
     <meta name="keywords" content="słowa, hashtagi"/>
+
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="logo">
-                <img src="{{ logo.graphic.url }}"/>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-sm-3">
+                <div id="logo">
+                    <img src="{{ logo.graphic.url }}"/>
+                </div>
             </div>
-            <div id="top-bar">
-                Witamy na stronie DawPol zmiana
+            <div class="col-sm-9">
+                <div id="top-bar">
+                    <h2 class="display-5"> Witamy na stronie DawPol</h2>
+                </div>
             </div>
         </div>
-        <div id="nav">
-            <a href="{% url 'main:parts' %}"> Katalog AutoCzęści </a> <br/>
-            strona 2 <br/>
-            strona 3
+        <div class="row">
+            <div class="col-sm-3">
+
+                <a href="{% url 'main:parts' %}"> Katalog AutoCzęści <span class="fas fa-wrench"></span></a>
+                strona 2
+                strona 3
+            </div>
+            <div class="col-sm-9" id="content">
+                Contnet here!!!!
+            </div>
         </div>
-        <div id="content">
-            auto mechanik <br/>
-            naprawiamy samochody <br/>
-            Hohliki pracują <br/>
-            <br/>
-            Marta mówi ja zaprogramowywuje
-        </div>
-        <div id="sidebar">
-            <p>AD <br/> notations </p>
-        </div>
-        <div id="footer">
-            FooterBędzin <br/>
-            Dawpol
-        </div>
+{#        <div id="footer">#}
+{#            FooterBędzin <br/>#}
+{#            Dawpol#}
+{#        </div>#}
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

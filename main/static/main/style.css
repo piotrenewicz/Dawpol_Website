@@ -1,13 +1,14 @@
+:root {
+    --panel_primary_color: black;
+    --panel_primary_text_color: white;
+}
+
+
+
 #body {
     background-color: gray;
     /*font-family: Vemana2000;*/
     font-size: 20px;
-}
-
-#container {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: auto;
 }
 
 img {
@@ -15,35 +16,37 @@ img {
     max-height: 100%;
 }
 
-#header {
-    /*background-color: black;*/
-    color: white;
-    text-align: left;
-    /*margin-left: 220px;*/
-    padding-top: 15px;
-    width: auto;
-    height: 210px;
-}
+/*#header {*/
+/*    !*background-color: black;*!*/
+/*    color: white;*/
+/*    text-align: left;*/
+/*    !*margin-left: 220px;*!*/
+/*    padding-top: 15px;*/
+/*    width: auto;*/
+/*    height: 210px;*/
+/*}*/
 
 #logo {
-    background-color: black;
-    float: left;
-    width: 210px;
-    height: inherit;
+    background-color: var(--panel_primary_color);
+    padding-top: 35px;
+    padding-bottom: 35px;
+    /*height: 100%;*/
+    /*float: left;*/
+    /*width: 210px;*/
+    /*height: inherit;*/
 }
 
 #top-bar {
-    background-color: black;
-    /*float: left;*/
-    margin-left: 230px;
-    height: inherit;
-    width: available;
-}
-
-#nav {
-    float: left;
-    background-color: red;
-    max-height: 300px;
+    background-color: var(--panel_primary_color);
+    padding-top: 5%;
+    padding-bottom: auto;
+    padding-left: 10px;
+    color: var(--panel_primary_text_color);
+    /*font-size: 35px;*/
+    margin-left: 1%;
+    height: 100%;
+    /*width: available;*/
+    font-family: "DejaVu Sans Condensed", serif;
 }
 
 #content {
@@ -53,15 +56,9 @@ img {
     width: auto;
 }
 
-#sidebar {
-    float: left;
-    background-color: #003f80;
-    width: 10%;
-}
-
 #footer {
     clear: both;
-    background-color: black;
+    background-color: var(--panel_primary_color);
     color: white;
     text-align: center;
 }
