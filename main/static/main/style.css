@@ -1,9 +1,17 @@
 :root {
-    --panel_primary_color: black;
-    --panel_primary_text_color: white;
+    --primary_color: black;
+    --seconodary_color: white;
 }
 
+.primary-color {
+    background-color: var(--primary_color);
+    border-color: var(--primary_color);
+}
 
+.secondary-color {
+    background-color: var(--seconodary_color);
+    border-color: var(--seconodary_color);
+}
 
 #body {
     background-color: gray;
@@ -12,8 +20,10 @@
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+    /*max-width: 100%;*/
+    /*max-height: 100%;*/
+    width: 100%;
+    height: auto;
 }
 
 /*#header {*/
@@ -27,9 +37,9 @@ img {
 /*}*/
 
 #logo {
-    background-color: var(--panel_primary_color);
-    padding-top: 35px;
-    padding-bottom: 35px;
+    /*background-color: var(--panel_primary_color);*/
+    /*padding-top: 35px;*/
+    /*padding-bottom: 35px;*/
     /*height: 100%;*/
     /*float: left;*/
     /*width: 210px;*/
@@ -37,28 +47,30 @@ img {
 }
 
 #top-bar {
-    background-color: var(--panel_primary_color);
-    padding-top: 5%;
-    padding-bottom: auto;
-    padding-left: 10px;
-    color: var(--panel_primary_text_color);
+    /*background-color: var(--panel_primary_color);*/
+
+    /*padding-top: 5%;*/
+    /*padding-bottom: auto;*/
+    text-align: center;
+    /*padding-left: 10px;*/
+    /*color: var(--panel_primary_text_color);*/
     /*font-size: 35px;*/
-    margin-left: 1%;
+    /*margin-left: 1%;*/
     height: 100%;
     /*width: available;*/
     font-family: "DejaVu Sans Condensed", serif;
 }
 
 #content {
-    float: left;
+    /*float: left;*/
     /*width: 80%;*/
-    background-color: white;
+    /*background-color: white;*/
     width: auto;
 }
 
 #footer {
-    clear: both;
-    background-color: var(--panel_primary_color);
+    /*clear: both;*/
+    /*background-color: var(--panel_primary_color);*/
     color: white;
     text-align: center;
 }
