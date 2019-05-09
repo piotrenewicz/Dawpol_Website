@@ -1,0 +1,33 @@
+
+
+//$dark: #2e20ff;
+
+
+#top-bar {
+    /*background-color: var(--panel_primary_color);*/
+
+    /*padding-top: 5%;*/
+    /*padding-bottom: auto;*/
+    text-align: center;
+    /*padding-left: 10px;*/
+    /*color: var(--panel_primary_text_color);*/
+    /*font-size: 35px;*/
+    /*margin-left: 1%;*/
+    height: 100%;
+    /*width: available;*/
+    font-family: "DejaVu Sans Condensed", serif;
+}
+
+#footer {
+    /*clear: both;*/
+    /*background-color: var(--panel_primary_color);*/
+    color: white;
+    text-align: center;
+}
+
+#content {
+    /*float: left;*/
+    /*width: 80%;*/
+    /*background-color: white;*/
+    width: auto;
+}
