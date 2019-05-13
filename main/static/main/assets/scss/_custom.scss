@@ -1,21 +1,53 @@
 
+$enable-responsive-font-sizes: true;
 
-//$dark: #2e20ff;
+$dark: #71222f;
 
-
-#top-bar {
-    /*background-color: var(--panel_primary_color);*/
-
-    /*padding-top: 5%;*/
-    /*padding-bottom: auto;*/
-    text-align: center;
-    /*padding-left: 10px;*/
-    /*color: var(--panel_primary_text_color);*/
-    /*font-size: 35px;*/
-    /*margin-left: 1%;*/
+.equal_height {
     height: 100%;
-    /*width: available;*/
+    /*padding-bottom: auto;*/
+}
+
+.top-bar {
+
+    @extend .col;
+    @extend .col-sm;
+    @extend .col-md;
+    @extend .ml-md-2;
+    @extend .pt-sm-4;
+    @extend .pt-1;
+    @extend .bg-dark;
+    @extend .text-white;
+
+
+
+    text-align: center;
     font-family: "DejaVu Sans Condensed", serif;
+}
+
+.logo {
+    @extend .col-sm-3;
+    @extend .col-md-3;
+    @extend .pt-sm-4;
+    @extend .pb-sm-4;
+    @extend .bg-dark;
+
+}
+
+.sidebar {
+    @extend .col-md-3;
+    @extend .p-0;
+    @extend .text-white;
+}
+
+.sidebar-button {
+    @extend .btn;
+    @extend .btn-block;
+    @extend .mt-2;
+    @extend .btn-dark;
+    //@extend .text-left;
+
+
 }
 
 #footer {

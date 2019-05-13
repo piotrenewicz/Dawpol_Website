@@ -27,6 +27,10 @@ class ImageContent(models.Model):
     def __str__(self):
         return self.name
 
+class page(models.Model):
+
+    icon = models.CharField(max_length=100)
+
 class ImageListing(models.Model):
     id = models.CharField(primary_key=True, max_length=24)
 

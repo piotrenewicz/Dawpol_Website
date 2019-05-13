@@ -21,31 +21,34 @@
 
 
         <div class="container">
-            <div class="row text-white">
-                <div class="col-sm-3 col-md-3 pt-sm-4 pb-sm-4 bg-dark">
-                    <div id="logo">
+            <div class="row">
+                <div class="logo"> {#  col-sm-3 col-md-3 pt-sm-4 pb-sm-4 bg-dark">  #}
                         <img src="{{ logo.graphic.url }}" alt="{Logo_1}"/>
-                    </div>
                 </div>
-                <div class="col-xs col-sm col-md ml-md-2 pt-sm-4 pt-1 bg-dark"> {# ml-sm-2    MarginLeft-small&up-2 * .25 ?? #}
-                    <div id="top-bar">
-                        <h2 class="display-5"> STRONA GŁÓWNA</h2>
-                    </div>
+                <div class="top-bar"> {#  col-xs col-sm col-md ml-md-2 pt-sm-4 pt-1 bg-dark"> {# ml-sm-2    MarginLeft-small&up-2 * .25 ?? #}
+                    <h2 class="display-5 equal_height"> STRONA GŁÓWNA</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 p-0 text-white">
-                    <a href="{% url 'main:parts' %}" class="btn btn-block mt-2 btn-dark" role="button">
-                        <span class="fas fa-car float-left"></span> Katalog AutoCzęści
+                <div class="sidebar"> {#   col-md-3 p-0 text-white"> #}
+                    <a href="{% url 'main:parts' %}" class="sidebar-button" role="button"> {#  btn btn-block mt-2 btn-dark #}
+                        <div class="row">
+                            <div class="col-1">
+                                <span class="fas fa-car"></span>
+                            </div>
+                            <div class="col">
+                                Katalog AutoCzęści
+                            </div>
+                        </div>
                     </a>
-                    <a href="{% url 'main:parts' %}" class="btn btn-block mt-2 btn-dark" role="button">
-                        <span class="fas fa-shuttle-van float-left"></span> Wynajem busa
+                    <a href="{% url 'main:parts' %}" class="sidebar-button" role="button">
+                        <span class="fas fa-shuttle-van {#  float-left pt-1  #}"></span> Wynajem busa
                     </a>
-                    <a href="{% url 'main:parts' %}" class="btn btn-block mt-2 btn-dark" role="button">
-                        <span class="fas fa-wrench float-left"></span> Naprawy samochodów
+                    <a href="{% url 'main:parts' %}" class="sidebar-button" role="button">
+                        <span class="fas fa-wrench {#  float-left pt-1  #}"></span> Naprawy samochodów
                     </a>
-                    <a href="{% url 'main:parts' %}" class="btn btn-block mt-2 btn-dark" role="button">
-                        <span class="fas fa-camera float-left"></span> Galeria
+                    <a href="{% url 'main:parts' %}" class="sidebar-button" role="button">
+                        <span class="fas fa-camera {#  float-left pt-1  #}"></span> Galeria
                     </a>
                     <div class="d-none d-md-block  jumbotron mt-5 p-2">
 {#                        <img src="https://media1.tenor.com/images/8f0385b075b2142dde6acc43f0927cbc/tenor.gif">#}
