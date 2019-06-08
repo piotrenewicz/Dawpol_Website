@@ -1,12 +1,16 @@
 from django.shortcuts import render
-from django.template import loader
-from .models import TextContent, ImageListing, ImageElement, ImageContent
+# from django.template import loader
+from .models import TextContent, ImageListing, ImageElement, ImageContent, Page
 
 # Create your views here.
+
+
 def index(request):
     logo = get_content_image("logo_1")
+    page_list = Page.objects.all().order_by('order')
     context = {
-        "logo": logo
+        "logo": logo,
+        "pages": page_list
     }
     # template = loader.render_to_string('main/index.html', context)
     # print(template)
@@ -20,9 +24,11 @@ def parts_gallery(request):
     }
     return render(request, 'main/parts.html', context)
 
+
 def get_content_image(image_name):
     image = ImageContent.objects.get(name=image_name)
     return image
+
 
 def get_items(item_manager_name):
     items_manager = ImageListing.objects.get(id=item_manager_name)

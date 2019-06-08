@@ -1,6 +1,7 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
 import os
+from django.urls import reverse
 
 # Create your models here.
 
@@ -16,6 +17,7 @@ class TextContent(models.Model):
             short = self.text
         return self.id + ": " + short
 
+
 class ImageContent(models.Model):
     def directory(self, f_str):
         f_name, f_ext = os.path.splitext(f_str)
@@ -27,9 +29,24 @@ class ImageContent(models.Model):
     def __str__(self):
         return self.name
 
-class page(models.Model):
 
-    icon = models.CharField(max_length=100)
+class Page(models.Model):
+    url = models.CharField(max_length=100)
+    is_internal = models.BooleanField()
+
+    def get_url(self):
+        if self.is_internal:
+            return reverse(self.url)
+        else:
+            return self.url
+
+    def __str__(self):
+        return self.name
+
+    order = models.IntegerField(default=1)
+    icon = models.CharField(max_length=100, default="question")  # this is the icon for a button on the index page//
+    name = models.CharField(max_length=100, default="Unnamed")   # this is the name for both a button and a header
+
 
 class ImageListing(models.Model):
     id = models.CharField(primary_key=True, max_length=24)
