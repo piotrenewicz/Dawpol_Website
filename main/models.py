@@ -31,8 +31,12 @@ class ImageContent(models.Model):
 
 
 class Page(models.Model):
-    url = models.CharField(max_length=100)
-    is_internal = models.BooleanField()
+    name = models.CharField(max_length=100, default="Unnamed", verbose_name="Nazwa") # this is the name for both a button and a header
+    icon = models.CharField(max_length=100, default="question", verbose_name="Ikona") #this is the icon for a button on the index page
+
+    url = models.CharField(max_length=100, verbose_name="Adres")
+    is_internal = models.BooleanField(verbose_name="Wewnętrzny")
+    order = models.IntegerField(default=1)
 
     def get_url(self):
         if self.is_internal:
@@ -42,10 +46,6 @@ class Page(models.Model):
 
     def __str__(self):
         return self.name
-
-    order = models.IntegerField(default=1)
-    icon = models.CharField(max_length=100, default="question")  # this is the icon for a button on the index page//
-    name = models.CharField(max_length=100, default="Unnamed")   # this is the name for both a button and a header
 
 
 class ImageListing(models.Model):
