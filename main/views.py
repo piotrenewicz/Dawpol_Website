@@ -25,6 +25,23 @@ def parts_gallery(request):
     return render(request, 'main/parts.html', context)
 
 
+def bus_rental(request):
+    logo = get_content_image("logo_1")
+    items = get_items("wynajem_busa")
+    items_iter = iter(items)
+    default_item = next(items_iter)
+    slides_index = range(1, len(items))
+
+    context = {
+        "logo": logo,
+        "photos": items,
+        "photo_default": default_item,
+        "photos_iter": items_iter,
+        "slide_numbers": slides_index,
+    }
+    return render(request, 'main/buspage.html', context)
+
+
 def get_content_image(image_name):
     image = ImageContent.objects.get(name=image_name)
     return image
