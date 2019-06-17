@@ -50,6 +50,13 @@ $primary: #363c42;
     //@extend .text-left;
 }
 
+.side-ad {
+    @extend .d-none;
+    @extend .d-md-block;
+    @extend .jumbotron;
+    @extend .mt-5;
+    @extend .p-2;
+}
 
 #footer {
     /*clear: both;*/
@@ -58,9 +65,15 @@ $primary: #363c42;
     text-align: center;
 }
 
-#content {
+.content {
+    @extend .p-md-0;
+    @extend .ml-md-2;
+    @extend .mt-2;
+    @extend .col;
+    width: auto;
+
     /*float: left;*/
     /*width: 80%;*/
     /*background-color: white;*/
-    width: auto;
+
 }
