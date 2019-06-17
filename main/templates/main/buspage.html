@@ -34,7 +34,7 @@
         <div class="row">
             <div class="sidebar"> {#   col-md-3 p-0 text-white"> #}
                 {% for page in pages %}
-                    <a href="{{ page.get_url }}" class="sidebar-button" role="button"> {#  btn btn-block mt-2 btn-dark #}
+                    <a href="{{ page.get_url }}" class="sidebar-button{% if page.codename == "buspage"%} disabled {% endif %}" role="button"> {#  btn btn-block mt-2 btn-dark #}
                         <div class="row">
                             <div class="col-1">
                                 <span class="fas fa-{{ page.icon }}"></span>

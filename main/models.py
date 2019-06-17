@@ -34,6 +34,7 @@ class Page(models.Model):
     name = models.CharField(max_length=100, default="Unnamed", verbose_name="Nazwa") # this is the name for both a button and a header
     icon = models.CharField(max_length=100, default="question", verbose_name="Ikona") #this is the icon for a button on the index page
 
+    codename = models.CharField(max_length=100, default="--", verbose_name="Sprzężenie")
     url = models.CharField(max_length=100, verbose_name="Adres")
     is_internal = models.BooleanField(verbose_name="Wewnętrzny")
     order = models.IntegerField(default=1)
@@ -46,6 +47,7 @@ class Page(models.Model):
 
     def __str__(self):
         return self.name
+
 
 
 class ImageListing(models.Model):
