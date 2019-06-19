@@ -29,16 +29,10 @@ def bus_rental(request):
     logo = get_content_image("logo_1")
     items = get_items("wynajem_busa")
     page_list = Page.objects.all().order_by('order')
-    items_iter = iter(items)
-    default_item = next(items_iter)
-    slides_index = range(1, len(items))
 
     context = {
         "logo": logo,
         "photos": items,
-        "photo_default": default_item,
-        "photos_iter": items_iter,
-        "slide_numbers": slides_index,
         "pages": page_list,
     }
     return render(request, 'main/buspage.html', context)
