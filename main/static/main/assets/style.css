@@ -1,3 +1,10 @@
+/* This file is deprecated
+it needs checking for any remaining usage,
+and potentially reimplementing those cases with the new _custom.scss
+
+When all of it's contents are checked and proven useless, it shall be removed.
+*/
+
 :root {
     --primary_color: black;
     --seconodary_color: white;
