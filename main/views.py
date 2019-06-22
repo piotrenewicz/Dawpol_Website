@@ -12,8 +12,6 @@ def index(request):
         "logo": logo,
         "pages": page_list
     }
-    # template = loader.render_to_string('main/index.html', context)
-    # print(template)
     return render(request, 'main/index.html', context)
 
 
