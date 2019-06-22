@@ -1,74 +1,20 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Dawpol</title>
-    <meta name="description" content="Strona mechanika samochodów" />
-    <meta name="keywords" content="słowa, hashtagi"/>
+{% extends "main/index.html" %}
 
 
-    <script src="{% static 'main/bootstrap_css/compiled.js' %}"></script>
+{% block page_header %}
+    Wypożyczalnia Busów
+{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-     <!-- Bootstrap CSS -->
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/assets/style.css' %}">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <a href="/" class="logo"> {#  col-sm-3 col-md-3 pt-sm-4 pb-sm-4 bg-dark">  #}
-                    <img src="{{ logo.graphic.url }}" alt="{Logo_1}"/>
-            </a>
-            <div class="top-bar"> {#  col-xs col-sm col-md ml-md-2 pt-sm-4 pt-1 bg-dark"> {# ml-sm-2    MarginLeft-small&up-2 * .25 ?? #}
-                <h2 class="display-5 equal_height"> BUSPAGE</h2>
+
+{% block content %}
+    {% include "common/carousel.html" with photos=photos only %}
+    <div class="row">
+        <div class="col mt-2">
+            <div class="jumbotron bg-info text-white p-4">
+                Witaj! tutaj możesz zobaczyć busy!!! <br>
+                Ale ale, nie za szybko, nie możesz ich tak po prostu wypożyczyć! <br>
+                Musisz najpierw skontaktować się z nami  #D
             </div>
         </div>
-        <div class="row">
-            <div class="sidebar"> {#   col-md-3 p-0 text-white"> #}
-                {% for page in pages %}
-                    <a href="{{ page.get_url }}" class="sidebar-button{% if page.codename == "buspage"%} disabled {% endif %}" role="button"> {#  btn btn-block mt-2 btn-dark #}
-                        <div class="row">
-                            <div class="col-1">
-                                <span class="fas fa-{{ page.icon }}"></span>
-                            </div>
-                            <div class="col">
-                                {{ page.name }}
-                            </div>
-                        </div>
-                    </a>
-                {% endfor %}
-                <div class="side-ad">
-{#                        <img src="https://media1.tenor.com/images/8f0385b075b2142dde6acc43f0927cbc/tenor.gif">#}
-                    <img src="http://www.ecstudents.net/10fall/kevinpost/archive/photoshop/gif_ads/9000th-winner-animated-2.gif" alt="Ad space for sale!! place YOUR_AD here, contact us!">
-                </div>
-            </div>
-            <div class="content">
-                {% include "common/carousel.html" with photos=photos only %}
-                <div class="row">
-                    <div class="col mt-2">
-                        <div class="jumbotron bg-info text-white p-4">
-                            Witaj! tutaj możesz zobaczyć busy!!! <br>
-                            Ale ale, nie za szybko, nie możesz ich tak po prostu wypożyczyć! <br>
-                            Musisz najpierw skontaktować się z nami  #D
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>  {# end of content #}
-        </div> {# end of main row #}
-    </div> {# end of container grid system #}
-
-
-
-    <!-- oh so that's how html does comments -->
-</body>
-</html>
+    </div>
+{% endblock content %}

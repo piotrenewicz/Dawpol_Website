@@ -27,7 +27,6 @@ def bus_rental(request):
     logo = get_content_image("logo_1")
     items = get_items("wynajem_busa")
     page_list = Page.objects.all().order_by('order')
-
     context = {
         "logo": logo,
         "photos": items,
