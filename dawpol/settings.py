@@ -35,6 +35,7 @@ MEDIA_URL = "/media/"
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'car_hire.apps.CarHireConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

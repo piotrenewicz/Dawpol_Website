@@ -1,0 +1,20 @@
+{% extends "main/index.html" %}
+
+
+{% block page_header %}
+    Wypożyczalnia Busów
+{% endblock %}
+
+
+{% block content %}
+    {% include "common/carousel.html" with photos=photos only %}
+    <div class="row">
+        <div class="col mt-2">
+            <div class="jumbotron bg-info text-white p-4">
+                Witaj! tutaj możesz zobaczyć busy!!! <br>
+                Ale ale, nie za szybko, nie możesz ich tak po prostu wypożyczyć! <br>
+                Musisz najpierw skontaktować się z nami  #D
+            </div>
+        </div>
+    </div>
+{% endblock content %}
