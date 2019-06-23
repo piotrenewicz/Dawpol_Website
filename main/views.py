@@ -6,13 +6,7 @@ from .models import TextContent, ImageListing, ImageElement, ImageContent, Page
 
 
 def index(request):
-    # logo = get_content_image("logo_1")
-    # page_list = Page.objects.all().order_by('order')
-    # context = {
-    #     "logo": logo,
-    #     "pages": page_list
-    # }
-    return render(request, 'main/index.html') #, context)
+    return render(request, 'main/index.html')
 
 
 def parts_gallery(request):
@@ -21,18 +15,6 @@ def parts_gallery(request):
         "Parts": items
     }
     return render(request, 'main/parts.html', context)
-
-
-def bus_rental(request):
-    # logo = get_content_image("logo_1")
-    items = get_items("wynajem_busa")
-    # page_list = Page.objects.all().order_by('order')
-    context = {
-        # "logo": logo,
-        "photos": items,
-        # "pages": page_list,
-    }
-    return render(request, 'main/buspage.html', context)
 
 
 def get_content_image(image_name):
