@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from django.template import loader
-from .models import TextContent, ImageListing, ImageElement, ImageContent, Page
+from .models import ImageListing, ImageElement, Page#, ImageContent, TextContent
 
 # Create your views here.
 
@@ -16,14 +16,14 @@ def parts_gallery(request):
     }
     return render(request, 'main/parts.html', context)
 
-
-def get_content_image(image_name):
-    image = ImageContent.objects.get(name=image_name)
-    return image
+#
+# def get_content_image(image_name):
+#     image = ImageContent.objects.get(name=image_name)
+#     return image
 
 
 def get_items(item_manager_name):
-    items_manager = ImageListing.objects.get(id=item_manager_name)
+    items_manager = ImageListing.objects.get(name=item_manager_name)
     all_items = items_manager.imageelement_set.all()
     return all_items
 
@@ -35,10 +35,10 @@ def items_view(request, item_manager_name):
     }
     return render(request, 'main/generic_tiles.html', context)
 
-
-def com_list(request):
-    contents = TextContent.objects.all()
-    context = {
-        "comments": contents
-    }
-    return render(request, 'main/happy.html', context)
+#
+# def com_list(request):
+#     contents = TextContent.objects.all()
+#     context = {
+#         "comments": contents
+#     }
+#     return render(request, 'main/happy.html', context)

@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import TextContent, ImageListing, ImageElement, ImageContent, Page
+from .models import ImageListing, ImageElement, Page#, TextContent,  ImageContent
 
 
 # Register your models here.
 
-admin.site.register(TextContent)
-# admin.site.register(GraphicalItem)
-admin.site.register(ImageContent)
+# admin.site.register(TextContent)
+# # admin.site.register(GraphicalItem)
+# admin.site.register(ImageContent)
 
 
 class ImageElementInline(admin.TabularInline):
@@ -16,7 +16,7 @@ class ImageElementInline(admin.TabularInline):
 
 class ImageListingAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Nazwa_Bazy', {'fields': ['id']}),
+        ('Nazwa_Bazy', {'fields': ['name']}),
     ]
     inlines = [ImageElementInline]
 
