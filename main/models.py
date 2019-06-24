@@ -66,9 +66,9 @@ class ImageListing(models.Model):
 class ImageElement(models.Model):
     def directory(self, f_str):
         f_name, f_ext = os.path.splitext(f_str)
-        return str(self.my_manager.id) + "/" + self.subtitle + f_ext
+        return self.my_manager.name + "/" + self.subtitle + f_ext
 
-    graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/")
+    graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/") # TODO: idea, try to make the file be removed from media when it is removed from the database.
     subtitle = models.CharField(max_length=100)
     my_manager = models.ForeignKey(ImageListing, on_delete=models.CASCADE)
 
