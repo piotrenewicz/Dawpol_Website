@@ -33,7 +33,7 @@ from django.urls import reverse
 
 class Page(models.Model):
     name = models.CharField(max_length=100, default="Unnamed", verbose_name="Nazwa") # this is the name for both a button and a header
-    icon = models.CharField(max_length=100, default="question", verbose_name="Ikona") #this is the icon for a button on the index page
+    icon = models.CharField(max_length=100, default="question", verbose_name="Ikona", blank=True) #this is the icon for a button on the index page
 
     url = models.CharField(max_length=100, verbose_name="Adres")
     is_internal = models.BooleanField(verbose_name="Wewnętrzny")
@@ -57,7 +57,7 @@ class Page(models.Model):
 
 
 class ImageListing(models.Model):
-    name = models.CharField(max_length=100, default="unnamed")
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
@@ -66,10 +66,10 @@ class ImageListing(models.Model):
 class ImageElement(models.Model):
     def directory(self, f_str):
         f_name, f_ext = os.path.splitext(f_str)
-        return self.my_manager.name + "/" + self.subtitle + f_ext
+        return self.my_manager.name + "/img_" + self.subtitle + f_ext
 
     graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/") # TODO: idea, try to make the file be removed from media when it is removed from the database.
-    subtitle = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100, blank=True)
     my_manager = models.ForeignKey(ImageListing, on_delete=models.CASCADE)
 
     def __str__(self):
