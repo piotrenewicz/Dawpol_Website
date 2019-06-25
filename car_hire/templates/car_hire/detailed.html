@@ -1,0 +1,11 @@
+{% extends 'main/index.html' %}
+
+{% block page_header %}
+    Wynajem tego busa
+{% endblock %}
+
+{% block content %}
+    {% include 'common/carousel.html' with photos=car.imageelement_set.all only %}
+
+
+{% endblock %}
