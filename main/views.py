@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# from django.template import loader
+# from django.templates import loader
 from .models import ImageListing, ImageElement, Page#, ImageContent, TextContent
 
 # Create your views here.

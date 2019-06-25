@@ -58,6 +58,7 @@ class Page(models.Model):
 
 class ImageListing(models.Model):
     name = models.CharField(max_length=100)
+    # this could try to remove the directory on delete
 
     def directory(self):
         return self.name
@@ -71,9 +72,12 @@ class ImageElement(models.Model):
         f_name, f_ext = os.path.splitext(f_str)
         return "./" + self.my_manager.directory() + "/img_" + self.subtitle + f_ext
 
-    graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/") # TODO: idea, try to make the file be removed from media when it is removed from the database.
+    graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/")
     subtitle = models.CharField(max_length=100, blank=True)
     my_manager = models.ForeignKey(ImageListing, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.subtitle
+
+    # TODO: idea, try to make the file be removed from media when it is removed from the database.
+    #       implement the pre_delete signal, and use os and graphic.path to remove the right file

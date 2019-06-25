@@ -19,4 +19,4 @@ def detailedview(request, car_id):
         'car': certain_car,
     }
 
-    return render(request, 'car_hire/detailed.html', context) # TODO: don't call this yet, it's unfinished
+    return render(request, 'car_hire/detailed.html', context)

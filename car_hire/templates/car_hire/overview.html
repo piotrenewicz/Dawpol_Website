@@ -6,15 +6,17 @@
 
 {% block content %}
     {% for car in cars %}
-        <a href="{% url 'car_hire:detailed' car_id=car.id %}" class="jumbotron mb-2 bg-info p-1">
-            <div class="row">
-                <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="col-4">
-                <div class="col">
-                    <div>
-                        {{ car.title }}
-                    </div>
-                    <div>
-                        {{ car.description }}
+        <a href="{% url 'car_hire:detailed' car_id=car.id %}">
+            <div class="jumbotron mb-2 bg-info p-1">
+                <div class="row">
+                    <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="col-4">
+                    <div class="col">
+                        <div>
+                            {{ car.title }}
+                        </div>
+                        <div>
+                            {{ car.description }}
+                        </div>
                     </div>
                 </div>
             </div>

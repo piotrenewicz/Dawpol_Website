@@ -1,4 +1,6 @@
 
+
+
 $enable-responsive-font-sizes: true;
 
 //$dark: #71222f;
@@ -9,6 +11,11 @@ $primary: #363c42;
 //  primary: red,
 //  purple: purple // $purple is defined in _variables.scss
 //);
+
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 
 .equal_height {
@@ -81,5 +88,24 @@ $primary: #363c42;
     /*float: left;*/
     /*width: 80%;*/
     /*background-color: white;*/
+}
 
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+@include media-breakpoint-up(md) {
+    .google-maps {
+        padding-bottom: 75%;
+    }
+}
+@include media-breakpoint-down(md) {
+    .google-maps {
+        padding-bottom: 175%;
+    }
 }
