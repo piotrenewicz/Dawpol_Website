@@ -59,6 +59,9 @@ class Page(models.Model):
 class ImageListing(models.Model):
     name = models.CharField(max_length=100)
 
+    def directory(self):
+        return self.name
+
     def __str__(self):
         return self.name
 
@@ -66,7 +69,7 @@ class ImageListing(models.Model):
 class ImageElement(models.Model):
     def directory(self, f_str):
         f_name, f_ext = os.path.splitext(f_str)
-        return self.my_manager.name + "/img_" + self.subtitle + f_ext
+        return "./" + self.my_manager.directory() + "/img_" + self.subtitle + f_ext
 
     graphic = models.ImageField(upload_to=directory)  # str(manager.id)+"/") # TODO: idea, try to make the file be removed from media when it is removed from the database.
     subtitle = models.CharField(max_length=100, blank=True)
