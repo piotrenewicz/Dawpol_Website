@@ -14,7 +14,7 @@ from .models import Question, Choice
 #     context = {
 #         'question_list': question_list,
 #     }
-#     return render(request, 'polls/index.html', context)
+#     return render(request, 'polls/base.html', context)
 #
 #
 # def detail(request, question_id):
