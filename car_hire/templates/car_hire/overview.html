@@ -17,7 +17,7 @@
                             </h4>
                         </div>
                         <div>
-                            {{ car.description }}
+                            {{ car.description | linebreaks }}
                         </div>
                     </div>
                     <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="img col-6 col-sm-5">

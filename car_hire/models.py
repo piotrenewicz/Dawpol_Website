@@ -6,7 +6,7 @@ from main.models import ImageListing#, ImageContent
 
 class Car(ImageListing):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=500)
 
     def save(self, *args, **kwargs):   # this is extremely brittle,
         self.name = "[car_hire]: "+self.title
