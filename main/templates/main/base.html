@@ -40,18 +40,44 @@
                 </div>
                 <div class="row">
                     <div class="sidebar"> {#   col-md-3 p-0 text-white"> #}
-                        {% for page in pages %}
-                            <a href="{{ page.get_url }}" class="sidebar-button{% if page.get_target_app == active_app %} btn-secondary {% endif %}" role="button"> {#  btn btn-block mt-2 btn-dark #}
-                                <div class="row">
-                                    <div class="col-1">
-                                        <span class="fas fa-{{ page.icon }}"></span>
-                                    </div>
-                                    <div class="col">
-                                        {{ page.name }}
-                                    </div>
-                                </div>
-                            </a>
-                        {% endfor %}
+                        {% block navbar %}
+
+
+<nav class="navbar"> {# navbar-inverse">#}
+    <a class="navbar-header" data-toggle="collapse" data-target="#sideNav">
+        <div class="row">
+            <div class="col-1">
+                <span class="fas fa-bars"></span>
+            </div>
+            <div class="col">
+                Menu
+            </div>
+        </div>
+{#      <a class="navbar-brand" href="#">WebSiteName</a>#}
+    </a>
+    <div class="collapse navbar-collapse" id="sideNav">
+{#      <ul class="sideNav">#}
+        {% for page in pages %}
+{#            <li>#}
+            <a href="{{ page.get_url }}" class="sidebar-button{% if page.get_target_app == active_app %} btn-secondary {% endif %}" role="button"> {#  btn btn-block mt-2 btn-dark #}
+                <div class="row">
+                    <div class="col-1">
+                        <span class="fas fa-{{ page.icon }}"></span>
+                    </div>
+                    <div class="col">
+                        {{ page.name }}
+                    </div>
+                </div>
+            </a>
+{#            </li>#}
+        {% endfor %}
+{#      </ul>#}
+    </div>
+</nav>
+
+
+
+                        {% endblock navbar %}
                         <div class="side-ad">
                             {% block adspace %}
 {#                              <img src="https://media1.tenor.com/images/8f0385b075b2142dde6acc43f0927cbc/tenor.gif">#}

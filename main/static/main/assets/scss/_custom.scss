@@ -12,6 +12,23 @@ $primary: #363c42;
 //  purple: purple // $purple is defined in _variables.scss
 //);
 
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1900px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1610px
+);
+
 // ============================== change bootstrap variables above this bar ============================================
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
@@ -53,7 +70,6 @@ $primary: #363c42;
     @extend .pt-sm-4;
     @extend .pb-sm-4;
     @extend .bg-primary;
-
 }
 
 .sidebar {
@@ -61,6 +77,23 @@ $primary: #363c42;
     @extend .p-0;
     @extend .text-white;
 }
+
+.navbar {
+    @extend .p-0;
+}
+
+.navbar-header {
+    @extend .d-md-none;
+    @extend .sidebar-button
+//    hide this on screens large enough
+}
+
+.navbar-collapse {
+    //@extend .d-none;
+    @extend .d-md-block;
+}
+
+
 
 .sidebar-button {
     @extend .btn;
