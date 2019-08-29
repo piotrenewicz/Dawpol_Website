@@ -35,7 +35,7 @@
                         <img src="{% static "main/img/logo.png" %}" alt="{Logo_1}"/>
                     </a>
                     <div class="top-bar"> {#  col-xs col-sm col-md ml-md-2 pt-sm-4 pt-1 bg-dark"> {# ml-sm-2    MarginLeft-small&up-2 * .25 ?? #}
-                        <h2 class="display-5 equal_height">{% block page_header %} STRONA GŁÓWNA {% endblock page_header %}</h2>
+                        <div class="equal_height">{% block page_header %} STRONA GŁÓWNA {% endblock page_header %}</div>
                     </div>
                 </div>
                 <div class="row">
@@ -81,19 +81,36 @@
                 </div>
 
             </div> {# end of the normal container block #}
-            <div id="footer" class="row bg-dark"> <!-- TODO: footer should have it's own class-->
-                {% block footer %}
-                    <div class="col-sm-4">
-                        AutoMechanik
+            {% block footer %}
+                <div class="footer">
+                    <div class="container">
+                        <div class="row vertical-divider">
+                            <div class="col-sm-4"> {#  bg-warning">  #}
+                                <div class="m-3 mt-0">
+                                    <a href="/"> {#  col-sm-3 col-md-3 pt-sm-4 pb-sm-4 bg-dark">  #}
+                                        <img src="{% static "main/img/logo.png" %}" alt="{Logo_1}"/>
+                                    </a>
+                                </div>
+                                <div class="p-3 text-muted">
+                                    Company info: We are doing cars,
+                                </div>
+                                <div style="padding-bottom: 15rem;"></div> {# spacer maybe put something there #}
+                            </div>
+                            <div class="col-sm-4">
+                                <h3 class="font-weight-light text-info">
+                                    Kontakt
+                                </h3>
+                                Text
+                            </div>
+                            <div class="col-sm-4">
+                                <h3 class="font-weight-light text-info">
+                                    DAWPOL
+                                </h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        Będzin
-                    </div>
-                    <div class="col-sm-4">
-                        DAWPOL
-                    </div>
-                {% endblock footer %}
-            </div>
+                </div>
+            {% endblock footer %}
         </div> {# end of the container fluid #}
         <!-- oh so that's how html does comments -->
     {% endblock body %}

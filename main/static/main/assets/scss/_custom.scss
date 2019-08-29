@@ -1,10 +1,9 @@
-
-
-
-$enable-responsive-font-sizes: true;
+$enable-responsive-font-sizes: True;
 
 //$dark: #71222f;
 $primary: #363c42;
+$info: #4285F4;
+
 
 //
 //$theme-colors: (    ## this thing is wicked!, i need to make a list of cool things to change here
@@ -29,11 +28,20 @@ $container-max-widths: (
         xxl: 1610px
 );
 
+
+
 // ============================== change bootstrap variables above this bar ============================================
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/mixins/breakpoints";
+@import "node_modules/bootstrap/scss/vendor/rfs";
 // ================================ add classes and mixins below this bar ==============================================
+
+
+.body {
+    @include responsive-font-size(4rem);
+}
+
 
 .equal_height {
     height: 100%;
@@ -53,15 +61,15 @@ $container-max-widths: (
     @extend .col-sm;
     @extend .col-md;
     @extend .ml-md-2;
-    @extend .pt-sm-4;
+    @extend .pt-sm-3;
     @extend .pt-1;
     @extend .bg-primary;
     @extend .text-white;
 
-
-
     text-align: center;
     font-family: "DejaVu Sans Condensed", serif;
+
+    @include responsive-font-size(2.5rem);
 }
 
 .logo {
@@ -93,8 +101,6 @@ $container-max-widths: (
     @extend .d-md-block;
 }
 
-
-
 .sidebar-button {
     @extend .btn;
     @extend .btn-block;
@@ -111,11 +117,27 @@ $container-max-widths: (
     @extend .p-2;
 }
 
-#footer {
-    /*clear: both;*/
-    /*background-color: var(--panel_primary_color);*/
+.footer {
+    @extend .row;
+    @extend .bg-dark;
+    @extend .pt-4;
+    //@extend .container;
     color: white;
-    text-align: center;
+    //text-align: center;
+}
+
+.row.vertical-divider [class*='col-']:not(:last-child)::after {
+    background: #4B515D;
+    width: 1px;
+    content: "";
+    display:block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    min-height: 70px;
+    @extend .mt-4;
+    @extend .mb-4;
 }
 
 .content {
@@ -124,6 +146,7 @@ $container-max-widths: (
     @extend .mt-2;
     @extend .col;
     width: auto;
+    @include responsive-font-size(1.6rem);
 
     /*float: left;*/
     /*width: 80%;*/
