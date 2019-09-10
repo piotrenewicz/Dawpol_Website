@@ -121,12 +121,13 @@ $container-max-widths: (
     @extend .row;
     @extend .bg-dark;
     @extend .pt-4;
+    @extend .text-white;
     //@extend .container;
     color: white;
     //text-align: center;
 }
 
-.row.vertical-divider [class*='col-']:not(:last-child)::after {
+.row.vertical-divider>[class*='col-']:not(:last-child)::after {
     background: #4B515D;
     width: 1px;
     content: "";

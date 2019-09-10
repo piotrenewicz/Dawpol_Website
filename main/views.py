@@ -1,9 +1,9 @@
 from django.shortcuts import render
 # from django.templates import loader
-from .models import ImageListing, ImageElement, Page#, ImageContent, TextContent
+from .models import ImageListing, ImageElement, Page  # , ImageContent, TextContent
+
 
 # Create your views here.
-
 
 def index(request):
     return render(request, 'main/base.html')
@@ -15,6 +15,7 @@ def parts_gallery(request):
         "Parts": items
     }
     return render(request, 'main/parts.html', context)
+
 
 #
 # def get_content_image(image_name):

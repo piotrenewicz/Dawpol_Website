@@ -104,8 +104,20 @@
                             </div>
                             <div class="col-sm-4">
                                 <h3 class="font-weight-light text-info">
-                                    DAWPOL
+                                    Katalog
                                 </h3>
+                                {% for page in pages %}
+                                    <a href="{{ page.get_url }}" class="text-white">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <span class="fas fa-{{ page.icon }}"></span>
+                                            </div>
+                                            <div class="col">
+                                                {{ page.name }}
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
