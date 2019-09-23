@@ -12,19 +12,8 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-6" style="text-align: end;">
-            adres:<br/>
-            numer telefonu:<br/>
-            adres e-mail:<br/>
-            interaktywna mapa:<br/>
-            cokolwiek jeszcze:
-        </div>
         <div class="col-6">
-            kurkuma <br/>
-            999 <br/>
-            xd@swiat <br/>
-            <a href="{% url 'contact:map' %}">Kliknij tutaj</a> <br/>
-            ?????
+            {% include 'common/Contact_details.html' %}
         </div>
 {#        <div class="col-4">#}
 {#            <a href="{% url 'contact:map' %}">Mapa</a>#}

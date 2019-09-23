@@ -36,6 +36,8 @@ MEDIA_URL = "/media/"
 INSTALLED_APPS = [
     'main.apps.MainConfig',
     'car_hire.apps.CarHireConfig',
+    'car_parts.apps.CarPartsConfig',
+    'services.apps.ServicesConfig',
     'contact.apps.ContactConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -112,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 
@@ -127,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(BASE_DIR, 'main/static')

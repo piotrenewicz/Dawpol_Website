@@ -15,19 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls.static import static
+from django.conf.urls import static, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from .settings import MEDIA_ROOT, MEDIA_URL
+from . import settings
+from django.views.static import serve
 
 urlpatterns = [
     path('', include('main.urls')),
-    path('Wypożycz/', include('car_hire.urls')),
+    path('busy_wynajem/', include('car_hire.urls')),
     path('polls/', include('polls.urls')),
-    path('Contact/', include('contact.urls')),
+    path('uslugi/', include('services.urls')),
+    path('czesci/', include("car_parts.urls")),
+    path('kontakt/', include('contact.urls')),
     path('admin/', admin.site.urls),
 ]
 
-
+urlpatterns += [ url(r'^media/(?P<path>.*)$', serve, { 'document_root': settings.MEDIA_ROOT, }), url(r'^static/(?P<path>.*)$', serve, { 'document_root': settings.STATIC_ROOT }), ]
 urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(MEDIA_URL,
+urlpatterns += static.static(MEDIA_URL,
 document_root=MEDIA_ROOT)

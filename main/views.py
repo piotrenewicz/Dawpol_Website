@@ -3,7 +3,12 @@ from django.shortcuts import render
 from .models import ImageListing, ImageElement, Page  # , ImageContent, TextContent
 
 
-# Create your views here.
+# Create your views here
+
+def e404(request):
+    return render(request, "errors/404.html")
+
+
 
 def index(request):
     return render(request, 'main/base.html')

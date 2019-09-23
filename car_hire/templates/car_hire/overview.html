@@ -5,25 +5,26 @@
 {% endblock %}
 
 {% block content %}
-    {% for car in cars %}
-        <a href="{% url 'car_hire:detailed' car_id=car.id %}">
-            <div class="mb-2">
-                <div class="row">
-                    <div class="col-lg-1"></div>
-                    <div class="col">
-                        <div>
-                            <h4>
-                                {{ car.title }}
-                            </h4>
-                        </div>
-                        <div>
-                            {{ car.description | linebreaks }}
+    <div class="row">
+        {% for car in cars %}
+            <div class="col-xxl-4 mb-2">
+                <a href="{% url 'car_hire:detailed' car_id=car.id %}">
+                    <div class="card blue-link">
+                        <div class="row no-gutters">
+                            <div class="col-lg-4 col-xxl-12">
+                                <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="img card-image-top">
+                            </div>
+                            <div class="col-lg-8 col-xxl-12">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ car.title }}</h4>
+                                    <p class="card-text">{{ car.description | linebreaks }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="img col-6 col-sm-5">
-                </div>
+                </a>
             </div>
-        </a>
-        <hr />
-    {% endfor %}
+            <hr />
+        {% endfor %}
+    </div>
 {% endblock %}

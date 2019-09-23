@@ -11,6 +11,15 @@ $info: #4285F4;
 //  purple: purple // $purple is defined in _variables.scss
 //);
 
+$border-widths: (
+        0: 0px,
+        1: 1px,
+        2: 2px,
+        3: 3x,
+        4: 4x,
+        5: 8px,
+);
+
 $grid-breakpoints: (
         xs: 0,
         sm: 576px,
@@ -109,6 +118,22 @@ $container-max-widths: (
     //@extend .text-left;
 }
 
+@each $size, $pixel in $border-widths {
+    .border-#{$size} {
+        border-width: $pixel !important;
+    }
+}
+
+.blue-link {
+    @extend .border-2;
+    @extend .border-primary;
+    @extend .equal_height;
+
+    &:hover {
+        @extend .border-info;
+    }
+}
+
 .side-ad {
     @extend .d-none;
     @extend .d-md-block;
@@ -118,6 +143,7 @@ $container-max-widths: (
 }
 
 .footer {
+    @extend .mt-5;
     @extend .row;
     @extend .bg-dark;
     @extend .pt-4;
@@ -142,7 +168,7 @@ $container-max-widths: (
 }
 
 .content {
-    @extend .p-md-0;
+    @extend .p-0;
     @extend .ml-md-2;
     @extend .mt-2;
     @extend .col;

@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+
+{% block page_header %}
+    Błąd 404: Strona nie istnieje!
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <div class="bg-warning text-center text-white p-xl-5 p-lg-4 p-5">
+                <div class="row">
+                    <div class="col-lg-5 p-5 p-lg-0">
+                        <span class="fas fa-exclamation-triangle fa-9x"></span>
+                    </div>
+{#                    <div class="col-1 bg-info">#}
+{#                    </div>#}
+                    <div class="col">
+                        <div class="row text-center h-100">
+                            <div class="col text-center my-auto">
+                                <div class="card card-text bg-warning border-white border-5 p-2">
+                                    Wyszukana strona nie istnieje.<br>
+                                    Sprawdź poprawność adresu URL<br>
+                                    <br>
+                                    <a href="/" class="text-white">Zapraszamy na stronę główną</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
