@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["10.220.22.142", "acquiro.serveo.net", "127.0.0.1", "192.168.0.103", 'piotrenewicz.pythonanywhere.com']
 
-MEDIA_ROOT = "/home/aaa4/Desktop/davpol/website/dawpol/media"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
 
