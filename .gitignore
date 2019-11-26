@@ -1,6 +1,5 @@
 .idea/
 __pycache__/
 main/static/main/bootstrap_builder/
-manage.py
 nano.save
 venv/
