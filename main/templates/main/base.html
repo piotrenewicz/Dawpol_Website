@@ -96,7 +96,7 @@
                             <div class="row">
                                 <div class="col-xxl-4 mb-3">
                                     <a href="{% url "car_hire:overview" %}">
-                                        <div class="card blue-link">
+                                        <div class="card blue-link-card">
                                             <div class="row no-gutters">
                                                 <div class="col-lg-4 col-xxl-12">
                                                     <img src="{% static 'main/img/car.jpg' %}" class="card-img-top" alt="...">
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="col-xxl-4 mb-3">
                                     <a href="/uslugi">
-                                        <div class="card blue-link">
+                                        <div class="card blue-link-card">
                                             <div class="row no-gutters">
                                                 <div class="col-lg-4 col-xxl-12">
                                                     <img src="{% static 'main/img/engine.jpg' %}" class="card-img-top" alt="...">
@@ -130,7 +130,7 @@
                                 </div>
                                 <div class="col-xxl-4 mb-3">
                                     <a href="/czesci">
-                                        <div class="card blue-link">
+                                        <div class="card blue-link-card">
                                             <div class="row no-gutters">
                                                 <div class="col-lg-4 col-xxl-12">
                                                     <img src="{% static 'main/img/part.jpg' %}" class="card-img-top" alt="...">
@@ -170,10 +170,7 @@
                                 <h3 class="font-weight-light text-info">
                                     Kontakt
                                 </h3>
-                                42-500 Będzin <br>
-                                ul. Małobądzka 198 <br>
-                                tel: 601 881 889 <br>
-
+                                 {% include 'common/Contact_details.html' %}
                             </div>
                             <div class="col-sm-4">
                                 <h3 class="font-weight-light text-info">
