@@ -4,7 +4,6 @@ $enable-responsive-font-sizes: True;
 $primary: #363c42;
 $info: #4285F4;
 
-
 //
 //$theme-colors: (    ## this thing is wicked!, i need to make a list of cool things to change here
 //  primary: red,
@@ -125,6 +124,14 @@ $container-max-widths: (
 }
 
 .blue-link {
+    @extend .text-info;
+
+     &:hover {
+        @extend .active;
+    }
+}
+
+.blue-link-card {
     @extend .border-2;
     @extend .border-primary;
     @extend .equal_height;

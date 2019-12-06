@@ -9,7 +9,7 @@
         {% for car in cars %}
             <div class="col-xxl-4 mb-2">
                 <a href="{% url 'car_hire:detailed' car_id=car.id %}">
-                    <div class="card blue-link">
+                    <div class="card blue-link-card">
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-xxl-12">
                                 <img src="{{ car.imageelement_set.first.graphic.url }}" alt="{{ car.imageelement_set.first.subtitle }}" class="img card-image-top">
