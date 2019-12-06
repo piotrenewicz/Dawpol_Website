@@ -7,6 +7,8 @@ from main.views import get_items
 
 def overview(request):
     all_cars = Car.objects.all()
+    for car in all_cars:
+        car.short_description = car.description.split("\n")[0]
     context = {
         'cars': all_cars,
     }
