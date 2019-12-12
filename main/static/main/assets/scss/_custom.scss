@@ -145,8 +145,10 @@ $container-max-widths: (
     @extend .d-none;
     @extend .d-md-block;
     @extend .jumbotron;
+    @extend .bg-primary;
     @extend .mt-5;
     @extend .p-2;
+    height: calc(100% - 285px);
 }
 
 .footer {
