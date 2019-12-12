@@ -25,7 +25,7 @@ SECRET_KEY = '8q+$s+uj8g8ig!zrbmnr64%xmv1d7#@ea1!&85k((2h-k70n#j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["10.220.22.171", "acquiro.serveo.net", "127.0.0.1", "192.168.0.103", 'piotrenewicz.pythonanywhere.com']
+ALLOWED_HOSTS = ["10.220.22.171", "acquiro.serveo.net", "127.0.0.1", "192.168.0.103", 'piotrenewicz.pythonanywhere.com', 'dawpol.megiteam.pl', 'dawpol.auto.pl']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
