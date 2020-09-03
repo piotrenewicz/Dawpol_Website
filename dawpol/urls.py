@@ -24,7 +24,6 @@ from django.views.static import serve
 urlpatterns = [
     path('', include('main.urls')),
     path('busy_wynajem/', include('car_hire.urls')),
-    path('polls/', include('polls.urls')),
     path('uslugi/', include('services.urls')),
     path('czesci/', include("car_parts.urls")),
     path('kontakt/', include('contact.urls')),
