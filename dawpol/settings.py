@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ["10.220.22.171", "acquiro.serveo.net", "127.0.0.1", "192.168.0.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
-
 # Application definition
 
 INSTALLED_APPS = [
